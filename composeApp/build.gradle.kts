@@ -67,6 +67,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(projects.shared)
+            implementation(libs.bundles.ktor.common)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
