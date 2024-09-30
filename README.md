@@ -1,3 +1,16 @@
+# Notes
+
+To run web:
+```
+./gradlew :composeApp:wasmJsRun
+```
+
+# References
+
+- [Adding ktor to KMP for Web](https://medium.com/@ichchhamoktan07/adding-ktor-to-my-kotlin-multiplatform-project-for-web-web-assembly-or-wasm-4f6adad39b73)
+
+# Original documentation
+
 This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop, Server.
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
@@ -24,10 +37,3 @@ We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public S
 If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
 
 You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
-
-# Notes
-
-To run web:
-```
-./gradlew :composeApp:wasmJsRun
-```

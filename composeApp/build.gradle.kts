@@ -68,6 +68,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(projects.shared)
             implementation(libs.bundles.ktor.common)
+            implementation(libs.ktor.client.content.negotiation)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

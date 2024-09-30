@@ -9,10 +9,17 @@ import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import kotlinx.serialization.builtins.ListSerializer
+import kotlinx.serialization.builtins.serializer
+import kotlinx.serialization.json.Json
 
 fun main() {
-    embeddedServer(Netty, port = SERVER_PORT, host = "0.0.0.0", module = Application::module)
-        .start(wait = true)
+    embeddedServer(
+        factory = Netty,
+        port = SERVER_PORT,
+        host = "0.0.0.0",
+        module = Application::module
+    ).start(wait = true)
 }
 
 fun Application.module() {
@@ -31,14 +38,8 @@ fun Application.module() {
         }
 
         get("/wondons") {
-            log.info("Received request for /wondons")
-            try {
-                val wondons = listOf("Wondon A", "Wondon B", "Wondon C")
-                call.respond(mapOf("wondons" to wondons))
-            } catch (e: Exception) {
-                log.error("Error handling /wondons request", e)
-                call.respond(HttpStatusCode.InternalServerError, "Internal Server Error")
-            }
+            val wondons = listOf("Wondon A", "Wondon B", "Wondon C")
+            call.respond(HttpStatusCode.OK, Json.encodeToString(ListSerializer(String.serializer()), wondons))
         }
     }
 }

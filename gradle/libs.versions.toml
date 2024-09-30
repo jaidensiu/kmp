@@ -42,6 +42,7 @@ ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negoti
 
 ktor = { group = "io.ktor", name = "ktor", version.ref = "ktor-wasm" }
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor-wasm" }
+ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
 ktor-client-json = { group = "io.ktor", name = "ktor-client-json", version.ref = "ktor-wasm" }
 ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor-wasm" }
 ktor-client-serialization = { group = "io.ktor", name = "ktor-client-serialization", version.ref = "ktor-wasm" }
